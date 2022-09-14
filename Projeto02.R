@@ -60,3 +60,48 @@ Exe2 <- seq(0, 100, length.out = 5)
 h <- vector("numeric", length = 15)          #Default numeric é 0
 c <- vector("character", length = 15)        #Default Character é ""
 l <- vector("logical", length = 15)          #Default Logical é FALSE
+
+#13/09
+
+#Matrizes
+e <- matrix(ncol=2, nrow=2, data = 1:4)
+e[2.1] #Chama um valor da matriz
+e[2,]
+e[,2]
+e[,1:2]
+e[1:2,1]
+as.data.frame(e)
+
+#Listas
+i <- list(2, 3, "c", "d", FALSE, 2+3i, 4+2i)
+class(i)
+i[1]
+class(i[1])
+
+#Ordenação de dados
+library(dslabs)
+data(murders)
+sort(murders$total)
+x1 <- c(31, 4, 15, 92, 65)
+x1
+sort(x1)
+index <- order(x1)
+index
+x1[index]
+order(x1) #Coloca o lugar do número menor ao maior (Ex: 4 é o menor número, Então o primeiro número é 2 já que 4 está no segundo lugar)
+rank(x1)  #Coloca o rank do número em ordem crescente
+
+murders$state[1:10]
+murders$abb[1:10]
+index <- order(murders$total)
+murders$abb[index]
+murders$state[index]
+max(murders$total)
+i_max <- which.max(murders$total)
+i_max #California é o 5 estado na fila, Oque tem mais assassinatos
+murders$state[i_max]
+
+#Exercício
+pop <- murders$population
+pop <- sort(pop)
+pop[1]
