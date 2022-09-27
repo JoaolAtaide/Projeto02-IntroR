@@ -123,3 +123,10 @@ my_df <- data.frame(ranks, states)
 
 ind <- order(murders$population)
 my_df2 <- data.frame(states = states[ind], ranks[ind])
+
+murders$state[which.max(murders$population)]
+max(murders$population) #'which.max' mostra índice, 'Max' mostra valor
+
+#Vendo qual estado é o mais seguro de acordo com quantidade da população e assassinatos
+murders_rate <- murders$total / murders$population *100000
+murders$state[order(murders_rate, decreasing = TRUE)]
