@@ -105,3 +105,21 @@ murders$state[i_max]
 pop <- murders$population
 pop <- sort(pop)
 pop[1]
+ord <- order(pop)
+ord[1]
+murders[order(pop)[1]]
+
+which.min(murders$total)
+which.min(murders$population)
+i <- which.min(murders$population)
+states <- murders$state
+states[i]
+temp <- c(35,88,42,84,81,30)
+city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", "San Juan", "Toronto")
+city_temps <- data.frame(temp, city)
+states <- murders$state
+ranks <- rank(states)
+my_df <- data.frame(ranks, states)
+
+ind <- order(murders$population)
+my_df2 <- data.frame(states = states[ind], ranks[ind])
